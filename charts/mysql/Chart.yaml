@@ -1,9 +1,9 @@
 annotations:
-  catalog.cattle.io/auto-install: ps-operator=match
+  catalog.cattle.io/auto-install: percona-mysql-operator=match
   catalog.cattle.io/display-name: Percona MySQL
 apiVersion: v2
 appVersion: "0.3.0"
 description: A Helm chart for installing Percona Server Databases using the PS Operator.
 name: percona-mysql
 home: https://www.percona.com/doc/kubernetes-operator-for-mysql/ps
-version: 0.0.3
+version: 0.0.4
