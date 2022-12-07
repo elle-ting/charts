@@ -1,7 +1,6 @@
 questions:
 - variable: mysql.image.tag
   label: MySQL Container Image Tag
-  group: "MySQL Cluster"
   required: true
   type: enum
   options:
