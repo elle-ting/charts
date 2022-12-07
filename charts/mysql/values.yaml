@@ -47,11 +47,11 @@ mysql:
 
   resources:
     requests:
-      memory: 512M
-      cpu: 250m
+      memory: 1G
+      cpu: 500m
     limits:
-      memory: 512M
-      cpu: 250m
+      memory: 1G
+      cpu: 500m
 
   affinity:
     antiAffinityTopologyKey: "kubernetes.io/hostname"
@@ -74,7 +74,7 @@ mysql:
     pvc:
       resources:
         requests:
-          storage: 3G
+          storage: 10G
 
   # runtimeClassName: image-rc
   # priorityClassName: high-priority
