@@ -50,8 +50,8 @@ mysql:
       memory: 512M
       cpu: 250m
     limits:
-      memory: 1G
-      cpu: 500m
+      memory: 512M
+      cpu: 250m
 
   affinity:
     antiAffinityTopologyKey: "kubernetes.io/hostname"
@@ -135,15 +135,15 @@ haproxy:
   imagePullSecrets: []
   # initImage: percona/percona-server-mysql-operator:0.3.0
 
-  size: 3
+  size: 2
 
   resources:
     requests:
-      memory: 1G
-      cpu: 600m
+      memory: 512M
+      cpu: 500m
     limits:
-      memory: 1G
-      cpu: 700m
+      memory: 512M
+      cpu: 500m
 
   affinity:
     antiAffinityTopologyKey: "kubernetes.io/hostname"
@@ -255,8 +255,8 @@ orchestrator:
       memory: 128M
       cpu: 100m
     limits:
-      memory: 256M
-      cpu: 200m
+      memory: 128M
+      cpu: 100m
 
   affinity:
     antiAffinityTopologyKey: "kubernetes.io/hostname"
