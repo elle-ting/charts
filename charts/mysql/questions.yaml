@@ -39,3 +39,9 @@ questions:
   type: string
   default: "3G"
   group: "MySQL Cluster"
+- variable: pmm.enabled
+  label: "Enable PMM"
+  description: "Enable Percona Monitoring and Management (PMM) client"
+  type: boolean
+  default: false
+  group: "Other Settings"
