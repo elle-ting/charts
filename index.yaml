@@ -19,6 +19,19 @@ entries:
       catalog.cattle.io/display-name: Percona MySQL
     apiVersion: v2
     appVersion: 0.3.0
+    created: "2022-12-07T11:12:01.567536021Z"
+    description: A Helm chart for installing Percona Server Databases using the PS Operator.
+    digest: 7fe24b7fe3eb164914c631724adf3c65c0c7d2107c6fe6a5069d88207b53acad
+    home: https://www.percona.com/doc/kubernetes-operator-for-mysql/ps
+    name: percona-mysql
+    urls:
+    - https://github.com/elle-ting/charts/releases/download/percona-mysql-0.0.3/percona-mysql-0.0.3.tgz
+    version: 0.0.3
+  - annotations:
+      catalog.cattle.io/auto-install: ps-operator=match
+      catalog.cattle.io/display-name: Percona MySQL
+    apiVersion: v2
+    appVersion: 0.3.0
     created: "2022-12-07T11:01:46.651684274Z"
     description: A Helm chart for installing Percona Server Databases using the PS Operator.
     digest: 7792ce582d74e0865983fd27d0830149cabb90ebc0a31cb186b22b4828a03e6a
