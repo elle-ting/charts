@@ -6,4 +6,4 @@ appVersion: "0.3.0"
 description: A Helm chart for installing Percona Server Databases using the PS Operator.
 name: percona-mysql
 home: https://www.percona.com/doc/kubernetes-operator-for-mysql/ps
-version: 0.0.7
+version: 0.0.8

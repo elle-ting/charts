@@ -1,0 +1,81 @@
+questions:
+- variable: wordpressUsername
+  label: WordPress username
+  required: true
+  type: string
+  default: "user"
+  group: "WordPress Configuration"
+- variable: wordpressPassword
+  label: WordPress user password
+  required: false
+  type: string
+  default: ""
+  group: "WordPress Configuration"
+- variable: wordpressEmail
+  label: WordPress user email
+  required: false
+  type: string
+  default: "user@example.com"
+  group: "WordPress Configuration"
+- variable: wordpressFirstName
+  label: WordPress user first name
+  required: false
+  type: string
+  default: "FirstName"
+  group: "WordPress Configuration"
+- variable: wordpressLastName
+  label: WordPress user last name
+  required: false
+  type: string
+  default: "LastName"
+  group: "WordPress Configuration"
+- variable: wordpressBlogName
+  label: Blog name
+  required: false
+  type: string
+  default: "User's Blog!"
+  group: "WordPress Configuration"
+
+- variable: ingress.hostname
+  label: Ingress Hostname
+  description: "Default host for the ingress record	"
+  required: true
+  type: string
+  default: "wordpress.local"
+  group: "Traffic Exposure"
+
+- variable: externalDatabase.host
+  label: MySQL server host
+  required: true
+  type: string
+  default: "localhost"
+  group: "MySQL Connection Parameters"
+- variable: externalDatabase.port
+  label: MySQL server port
+  required: true
+  type: string
+  default: "3306"
+  group: "MySQL Connection Parameters"
+- variable: externalDatabase.user
+  label: MySQL username
+  required: true
+  type: string
+  default: "bn_wordpress"
+  group: "MySQL Connection Parameters"
+- variable: externalDatabase.database
+  label: MySQL database name
+  required: true
+  type: string
+  default: "bitnami_wordpress"
+  group: "MySQL Connection Parameters"
+- variable: externalDatabase.password
+  label: MySQL user password
+  required: false
+  type: password
+  group: "MySQL Connection Parameters"
+- variable: externalDatabase.existingSecret
+  label: MySQL password existing secret
+  description: "The name of an existing secret with database credentials. Must contain key `mariadb-password`. When it's set, the `MySQL user password` parameter is ignored"
+  required: false
+  type: secret
+  group: "MySQL Connection Parameters"
