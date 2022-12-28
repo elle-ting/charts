@@ -1,0 +1,107 @@
+questions:
+
+- variable: image.tag
+  label: MySQL Container Image Tag
+  required: true
+  type: enum
+  options:
+  - "8.0.30-debian-11-r28"
+  - "8.0.29-debian-11-r18"
+  - "5.7.40-debian-11-r26"
+  - "5.7.39-debian-11-r28"
+  - "5.7.38-debian-11-r18"
+  default: "8.0.31-debian-11-r20"
+  group: "MySQL Cluster"
+- variable: architecture
+  label: MySQL architecture
+  required: true
+  type: enum
+  options:
+  - "standalone"
+  - "replication"
+  default: "standalone"
+  group: "MySQL Cluster"
+- variable: auth.rootPassword
+  label: MySQL root password
+  description: "Password for the root user."
+  required: false
+  type: password
+  group: "MySQL Cluster"
+- variable: auth.replicationUser
+  label: MySQL replication user username
+  required: true
+  type: string
+  default: "replicator"
+  show_if: "architecture=replication"
+  group: "MySQL Cluster"
+- variable: auth.replicationPassword
+  label: MySQL replication user password
+  required: false
+  type: password
+  show_if: "architecture=replication"
+  group: "MySQL Cluster"
+- variable: auth.createDatabase
+  label: "Create custom database"
+  description: "Whether to create a custom database"
+  type: boolean
+  default: true
+  group: "MySQL Cluster"
+- variable: auth.database
+  label: Custom database name
+  description: "Name for a custom database to create"
+  required: true
+  type: string
+  default: "my_database"
+  show_if: "auth.createDatabase=true"
+  group: "MySQL Cluster"
+- variable: auth.username
+  label: Custom user
+  description: "Name for a custom user to create"
+  required: false
+  type: string
+  show_if: "auth.createDatabase=true"
+  group: "MySQL Cluster"
+- variable: auth.password
+  label: Custom user password
+  description: "Password for the new custom user"
+  required: false
+  type: password
+  show_if: "auth.createDatabase=true"
+  group: "MySQL Cluster"
+
+- variable: primary.name
+  label: Primary name
+  required: true
+  type: string
+  default: "primary"
+  group: "MySQL Primary"
+- variable: primary.persistence.size
+  label: MySQL primary persistent volume size
+  required: true
+  type: string
+  default: "8Gi"
+  group: "MySQL Primary"
+
+- variable: secondary.name
+  label: Secondary name
+  required: true
+  type: string
+  default: "secondary"
+  show_if: "architecture=replication"
+  group: "MySQL Secondary"
+- variable: secondary.replicaCount
+  label: Number of MySQL secondary replicas
+  required: true
+  type: int
+  min: 1
+  max: 2
+  default: 1
+  show_if: "architecture=replication"
+  group: "MySQL Secondary"
+- variable: secondary.persistence.size
+  label: MySQL secondary persistent volume size
+  required: true
+  type: string
+  default: "8Gi"
+  show_if: "architecture=replication"
+  group: "MySQL Secondary"

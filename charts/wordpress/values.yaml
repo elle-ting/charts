@@ -375,7 +375,9 @@ tolerations: []
 ## @param resources.requests.cpu The requested cpu for the WordPress containers
 ##
 resources:
-  limits: {}
+  limits:
+    memory: 512Mi
+    cpu: 300m
   requests:
     memory: 512Mi
     cpu: 300m

@@ -8,8 +8,7 @@ questions:
 - variable: wordpressPassword
   label: WordPress user password
   required: false
-  type: string
-  default: ""
+  type: password
   group: "WordPress Configuration"
 - variable: wordpressEmail
   label: WordPress user email
