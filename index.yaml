@@ -6,6 +6,19 @@ entries:
       catalog.cattle.io/display-name: Percona MySQL
     apiVersion: v2
     appVersion: 0.3.0
+    created: "2022-12-28T09:43:28.384579911Z"
+    description: A Helm chart for installing Percona Server Databases using the PS Operator.
+    digest: 4dc9584fc7a4078a5ff835cc1ade1c741af8cdb2b643c81a98961efdff86fbc0
+    home: https://www.percona.com/doc/kubernetes-operator-for-mysql/ps
+    name: percona-mysql
+    urls:
+    - https://github.com/elle-ting/charts/releases/download/percona-mysql-0.0.8/percona-mysql-0.0.8.tgz
+    version: 0.0.8
+  - annotations:
+      catalog.cattle.io/auto-install: percona-mysql-operator=match
+      catalog.cattle.io/display-name: Percona MySQL
+    apiVersion: v2
+    appVersion: 0.3.0
     created: "2022-12-07T14:49:16.022517982Z"
     description: A Helm chart for installing Percona Server Databases using the PS Operator.
     digest: 3619862d3ab0f3b6d818931eb85a77530636d9980baf8bf341bbf947d350a4c2
@@ -157,5 +170,39 @@ entries:
     name: percona-mysql-operator
     urls:
     - https://github.com/elle-ting/charts/releases/download/percona-mysql-operator-0.0.1/percona-mysql-operator-0.0.1.tgz
+    version: 0.0.1
+  wordpress:
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 6.1.1
+    created: "2022-12-28T09:43:28.53227467Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: WordPress is the world's most popular blogging and content management platform. Powerful yet simple, everyone from students to global corporations use it to build beautiful, functional websites.
+    digest: 74f30e579d73dbd98b72ef593db9ed01799e7151ccd68912491a7fb272f65041
+    home: https://github.com/bitnami/charts/tree/main/bitnami/wordpress
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - application
+    - blog
+    - cms
+    - http
+    - php
+    - web
+    - wordpress
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/wordpress
+    - https://wordpress.org/
+    urls:
+    - https://github.com/elle-ting/charts/releases/download/wordpress-0.0.1/wordpress-0.0.1.tgz
     version: 0.0.1
 generated: "2022-12-07T10:38:13.893195912Z"
