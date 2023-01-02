@@ -23,7 +23,7 @@ questions:
   group: "MySQL Cluster"
 - variable: auth.rootPassword
   label: MySQL root password
-  description: "Password for the root user."
+  description: "Password for the root user. If left blank, a random password will be generated."
   required: false
   type: password
   group: "MySQL Cluster"
@@ -36,6 +36,7 @@ questions:
   group: "MySQL Cluster"
 - variable: auth.replicationPassword
   label: MySQL replication user password
+  description: "Password for the replication user. If left blank, a random password will be generated."
   required: false
   type: password
   show_if: "architecture=replication"
@@ -63,7 +64,7 @@ questions:
   group: "MySQL Cluster"
 - variable: auth.password
   label: Custom user password
-  description: "Password for the new custom user"
+  description: "Password for the new custom user. If left blank, a random password will be generated."
   required: false
   type: password
   show_if: "auth.createDatabase=true"
