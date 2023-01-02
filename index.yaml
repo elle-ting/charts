@@ -270,6 +270,39 @@ entries:
       category: CMS
     apiVersion: v2
     appVersion: 6.1.1
+    created: "2023-01-02T08:58:21.198317781Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: WordPress is the world's most popular blogging and content management platform. Powerful yet simple, everyone from students to global corporations use it to build beautiful, functional websites.
+    digest: adf56a4364f257984ebccf283ae08b87163a5fc14d801bf420b8a45c551ddbbe
+    home: https://github.com/bitnami/charts/tree/main/bitnami/wordpress
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - application
+    - blog
+    - cms
+    - http
+    - php
+    - web
+    - wordpress
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/wordpress
+    - https://wordpress.org/
+    urls:
+    - https://github.com/elle-ting/charts/releases/download/wordpress-0.0.3/wordpress-0.0.3.tgz
+    version: 0.0.3
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 6.1.1
     created: "2022-12-28T10:29:02.115960335Z"
     dependencies:
     - name: common
