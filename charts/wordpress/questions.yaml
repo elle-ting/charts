@@ -46,8 +46,7 @@ questions:
 - variable: externalDatabase.host
   label: MySQL server host
   required: true
-  type: string
-  default: "localhost"
+  type: hostname
   group: "MySQL Connection Parameters"
 - variable: externalDatabase.port
   label: MySQL server port

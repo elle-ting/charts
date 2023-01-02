@@ -27,4 +27,4 @@ name: wordpress
 sources:
   - https://github.com/bitnami/containers/tree/main/bitnami/wordpress
   - https://wordpress.org/
-version: 0.0.2
+version: 0.0.3
