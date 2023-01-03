@@ -67,7 +67,7 @@ questions:
 - variable: auth.password
   label: Custom user password
   description: "Password for the new custom user. If not set, a random password will be generated."
-  required: true
+  required: false
   type: password
   show_if: "auth.createDatabase=true"
   group: "MySQL Cluster"
@@ -80,15 +80,38 @@ questions:
   group: "MySQL Primary"
 - variable: primary.persistence.size
   label: MySQL primary persistent volume size
+  description: "Disk size of the primary MySQL container"
   required: true
   type: string
-  default: "8Gi"
+  default: "10Gi"
   group: "MySQL Primary"
-- variable: primary.resources.limits.cpu
-  label: MySQL primary CPU resource limit
+- variable: primary.resources.requests.cpu
+  label: MySQL primary CPU request
+  description: "How much CPU will be reserved for the container."
   required: false
   type: string
   default: "250m"
+  group: "MySQL Primary"
+- variable: primary.resources.limits.cpu
+  label: MySQL primary CPU limit
+  description: "How much CPU the container is allowed to use. Exceeded limit causes CPU throttling."
+  required: false
+  type: string
+  default: "250m"
+  group: "MySQL Primary"
+- variable: primary.resources.requests.memory
+  label: MySQL primary memory request
+  description: "How much memory will be reserved for the container."
+  required: false
+  type: string
+  default: "1G"
+  group: "MySQL Primary"
+- variable: primary.resources.limits.memory
+  label: MySQL primary memory limit
+  description: "How much memory the container is allowed to use. Exceeded limit causes container restart."
+  required: false
+  type: string
+  default: "1G"
   group: "MySQL Primary"
 
 - variable: secondary.name
@@ -109,8 +132,37 @@ questions:
   group: "MySQL Secondary"
 - variable: secondary.persistence.size
   label: MySQL secondary persistent volume size
+  description: "Disk size of the secondary MySQL container"
   required: true
   type: string
   default: "8Gi"
   show_if: "architecture=replication"
+  group: "MySQL Secondary"
+- variable: secondary.resources.requests.cpu
+  label: MySQL secondary CPU request
+  description: "How much CPU will be reserved for the container."
+  required: false
+  type: string
+  default: "250m"
+  group: "MySQL Secondary"
+- variable: secondary.resources.limits.cpu
+  label: MySQL secondary CPU limit
+  description: "How much CPU the container is allowed to use. Exceeded limit causes CPU throttling."
+  required: false
+  type: string
+  default: "250m"
+  group: "MySQL Secondary"
+- variable: secondary.resources.requests.memory
+  label: MySQL secondary memory request
+  description: "How much memory will be reserved for the container."
+  required: false
+  type: string
+  default: "1G"
+  group: "MySQL Secondary"
+- variable: secondary.resources.limits.memory
+  label: MySQL secondary memory limit
+  description: "How much memory the container is allowed to use. Exceeded limit causes container restart."
+  required: false
+  type: string
+  default: "1G"
   group: "MySQL Secondary"

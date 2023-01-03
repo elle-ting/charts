@@ -7,6 +7,7 @@ questions:
   group: "WordPress Configuration"
 - variable: wordpressPassword
   label: WordPress user password
+  description: "If not set, a random password will be generated."
   required: false
   type: password
   group: "WordPress Configuration"
@@ -42,9 +43,45 @@ questions:
   type: hostname
   group: "Traffic Exposure"
 
+- variable: persistence.size
+  label: Persistent volume size
+  description: "Disk size of the WordPress container"
+  required: true
+  type: string
+  default: "10Gi"
+  group: "Resource Usage"
+- variable: resources.requests.cpu
+  label: CPU request
+  description: "How much CPU will be reserved for the container."
+  required: false
+  type: string
+  default: "250m"
+  group: "Resource Usage"
+- variable: resources.limits.cpu
+  label: CPU limit
+  description: "How much CPU the container is allowed to use. Exceeded limit causes CPU throttling."
+  required: false
+  type: string
+  default: "250m"
+  group: "Resource Usage"
+- variable: resources.requests.memory
+  label: Memory request
+  description: "How much memory will be reserved for the container."
+  required: false
+  type: string
+  default: "512Mi"
+  group: "Resource Usage"
+- variable: resources.limits.memory
+  label: Memory limit
+  description: "How much memory the container is allowed to use. Exceeded limit causes container restart."
+  required: false
+  type: string
+  default: "512Mi"
+  group: "Resource Usage"
+
 - variable: externalDatabase.host
   label: MySQL server host
-  description: "Hostname (or Kubernetes Service name) of the MySQL server to connect to"
+  description: "Hostname of the MySQL server to connect to."
   required: true
   type: hostname
   group: "MySQL Connection Parameters"
