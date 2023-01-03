@@ -14,6 +14,7 @@ questions:
   group: "MySQL Cluster"
 - variable: architecture
   label: MySQL architecture
+  description: "MySQL architecture (`standalone` or `replication`)"
   required: true
   type: enum
   options:
@@ -23,7 +24,7 @@ questions:
   group: "MySQL Cluster"
 - variable: auth.rootPassword
   label: MySQL root password
-  description: "Password for the root user. If left blank, a random password will be generated."
+  description: "Password for the root user. If not set, a random password will be generated."
   required: false
   type: password
   group: "MySQL Cluster"
@@ -36,7 +37,7 @@ questions:
   group: "MySQL Cluster"
 - variable: auth.replicationPassword
   label: MySQL replication user password
-  description: "Password for the replication user. If left blank, a random password will be generated."
+  description: "Password for the replication user. If not set, a random password will be generated."
   required: false
   type: password
   show_if: "architecture=replication"
@@ -58,14 +59,15 @@ questions:
 - variable: auth.username
   label: Custom user
   description: "Name for a custom user to create"
-  required: false
+  required: true
   type: string
+  default: "my_user"
   show_if: "auth.createDatabase=true"
   group: "MySQL Cluster"
 - variable: auth.password
   label: Custom user password
-  description: "Password for the new custom user. If left blank, a random password will be generated."
-  required: false
+  description: "Password for the new custom user. If not set, a random password will be generated."
+  required: true
   type: password
   show_if: "auth.createDatabase=true"
   group: "MySQL Cluster"
@@ -81,6 +83,12 @@ questions:
   required: true
   type: string
   default: "8Gi"
+  group: "MySQL Primary"
+- variable: primary.resources.limits.cpu
+  label: MySQL primary CPU resource limit
+  required: false
+  type: string
+  default: "250m"
   group: "MySQL Primary"
 
 - variable: secondary.name

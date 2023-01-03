@@ -37,14 +37,14 @@ questions:
 
 - variable: ingress.hostname
   label: Ingress Hostname
-  description: "Default host for the ingress record	"
+  description: "Desired FQDN for exposing the WordPress deployment (via Ingress)"
   required: true
-  type: string
-  default: "wordpress.local"
+  type: hostname
   group: "Traffic Exposure"
 
 - variable: externalDatabase.host
   label: MySQL server host
+  description: "Hostname (or Kubernetes Service name) of the MySQL server to connect to"
   required: true
   type: hostname
   group: "MySQL Connection Parameters"
@@ -54,26 +54,20 @@ questions:
   type: string
   default: "3306"
   group: "MySQL Connection Parameters"
-- variable: externalDatabase.user
-  label: MySQL username
-  required: true
-  type: string
-  default: "bn_wordpress"
-  group: "MySQL Connection Parameters"
 - variable: externalDatabase.database
   label: MySQL database name
   required: true
   type: string
   default: "bitnami_wordpress"
   group: "MySQL Connection Parameters"
+- variable: externalDatabase.user
+  label: MySQL user username
+  required: true
+  type: string
+  default: "bn_wordpress"
+  group: "MySQL Connection Parameters"
 - variable: externalDatabase.password
   label: MySQL user password
-  required: false
+  required: true
   type: password
-  group: "MySQL Connection Parameters"
-- variable: externalDatabase.existingSecret
-  label: MySQL password existing secret
-  description: "The name of an existing secret with database credentials. Must contain key `mariadb-password`. When it's set, the `MySQL user password` parameter is ignored"
-  required: false
-  type: secret
   group: "MySQL Connection Parameters"
