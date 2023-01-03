@@ -111,11 +111,9 @@ questions:
   show_if: "architecture=replication"
   group: "MySQL Secondary"
 - variable: secondary.replicaCount
-  label: Number of MySQL secondary replica containers
+  label: Number of MySQL secondary replica pods
   required: true
   type: int
-  min: 1
-  max: 5
   default: 1
   show_if: "architecture=replication"
   group: "MySQL Secondary"
