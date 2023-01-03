@@ -5,6 +5,37 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 8.0.31
+    created: "2023-01-03T10:08:36.57825454Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source relational database system. Designed to handle mission-critical, heavy-load production applications.
+    digest: 7902bd404553c32eee027c3102858a7de717f9f2adb6e04d73fbaf1c548f0dfd
+    home: https://github.com/bitnami/charts/tree/main/bitnami/mysql
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: mysql
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/mysql
+    - https://mysql.com
+    urls:
+    - https://github.com/elle-ting/charts/releases/download/mysql-0.0.4/mysql-0.0.4.tgz
+    version: 0.0.4
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 8.0.31
     created: "2023-01-02T08:44:30.759046553Z"
     dependencies:
     - name: common
@@ -266,6 +297,39 @@ entries:
     - https://github.com/elle-ting/charts/releases/download/percona-mysql-operator-0.0.1/percona-mysql-operator-0.0.1.tgz
     version: 0.0.1
   wordpress:
+  - annotations:
+      category: CMS
+    apiVersion: v2
+    appVersion: 6.1.1
+    created: "2023-01-03T10:08:36.850080097Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: WordPress is the world's most popular blogging and content management platform. Powerful yet simple, everyone from students to global corporations use it to build beautiful, functional websites.
+    digest: 92ae593e6af1df67fae98a0920623d6e8f484a9b4406fdf0676099d7b6d9f734
+    home: https://github.com/bitnami/charts/tree/main/bitnami/wordpress
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - application
+    - blog
+    - cms
+    - http
+    - php
+    - web
+    - wordpress
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/wordpress
+    - https://wordpress.org/
+    urls:
+    - https://github.com/elle-ting/charts/releases/download/wordpress-0.0.4/wordpress-0.0.4.tgz
+    version: 0.0.4
   - annotations:
       category: CMS
     apiVersion: v2
