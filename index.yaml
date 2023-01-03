@@ -5,6 +5,37 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 8.0.31
+    created: "2023-01-03T15:02:49.880313599Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 2.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source relational database system. Designed to handle mission-critical, heavy-load production applications.
+    digest: 29ff1324348b59d3621c743235cfb8da1b6de66d41221fcb1800ae2f458081e4
+    home: https://github.com/bitnami/charts/tree/main/bitnami/mysql
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - name: Bitnami
+      url: https://github.com/bitnami/charts
+    name: mysql
+    sources:
+    - https://github.com/bitnami/containers/tree/main/bitnami/mysql
+    - https://mysql.com
+    urls:
+    - https://github.com/elle-ting/charts/releases/download/mysql-0.0.7/mysql-0.0.7.tgz
+    version: 0.0.7
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 8.0.31
     created: "2023-01-03T12:38:06.793412602Z"
     dependencies:
     - name: common
