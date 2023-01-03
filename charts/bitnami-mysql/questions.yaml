@@ -28,20 +28,6 @@ questions:
   required: false
   type: password
   group: "MySQL Cluster"
-- variable: auth.replicationUser
-  label: MySQL replication user username
-  required: true
-  type: string
-  default: "replicator"
-  show_if: "architecture=replication"
-  group: "MySQL Cluster"
-- variable: auth.replicationPassword
-  label: MySQL replication user password
-  description: "Password for the replication user. If not set, a random password will be generated."
-  required: false
-  type: password
-  show_if: "architecture=replication"
-  group: "MySQL Cluster"
 - variable: auth.createDatabase
   label: "Create custom database"
   description: "Whether to create a custom database"
@@ -74,40 +60,42 @@ questions:
 
 - variable: primary.name
   label: Primary name
+  description: "Hostname of the MySQL primary pod (eg primary, master, leader, ...)"
   required: true
   type: string
   default: "primary"
+  show_if: "architecture=replication"
   group: "MySQL Primary"
 - variable: primary.persistence.size
-  label: MySQL primary persistent volume size
+  label: Persistent volume size
   description: "Disk size of the primary MySQL container"
   required: true
   type: string
   default: "10Gi"
   group: "MySQL Primary"
 - variable: primary.resources.requests.cpu
-  label: MySQL primary CPU request
+  label: CPU request
   description: "How much CPU will be reserved for the container."
   required: false
   type: string
   default: "250m"
   group: "MySQL Primary"
 - variable: primary.resources.limits.cpu
-  label: MySQL primary CPU limit
+  label: CPU limit
   description: "How much CPU the container is allowed to use. Exceeded limit causes CPU throttling."
   required: false
   type: string
   default: "250m"
   group: "MySQL Primary"
 - variable: primary.resources.requests.memory
-  label: MySQL primary memory request
+  label: Memory request
   description: "How much memory will be reserved for the container."
   required: false
   type: string
   default: "1G"
   group: "MySQL Primary"
 - variable: primary.resources.limits.memory
-  label: MySQL primary memory limit
+  label: Memory limit
   description: "How much memory the container is allowed to use. Exceeded limit causes container restart."
   required: false
   type: string
@@ -116,22 +104,23 @@ questions:
 
 - variable: secondary.name
   label: Secondary name
+  description: "Hostname of the MySQL secondary pod (eg secondary, slave, ...)"
   required: true
   type: string
   default: "secondary"
   show_if: "architecture=replication"
   group: "MySQL Secondary"
 - variable: secondary.replicaCount
-  label: Number of MySQL secondary replicas
+  label: Number of MySQL secondary replica containers
   required: true
   type: int
   min: 1
-  max: 2
+  max: 5
   default: 1
   show_if: "architecture=replication"
   group: "MySQL Secondary"
 - variable: secondary.persistence.size
-  label: MySQL secondary persistent volume size
+  label: Persistent volume size
   description: "Disk size of the secondary MySQL container"
   required: true
   type: string
@@ -139,30 +128,34 @@ questions:
   show_if: "architecture=replication"
   group: "MySQL Secondary"
 - variable: secondary.resources.requests.cpu
-  label: MySQL secondary CPU request
+  label: CPU request
   description: "How much CPU will be reserved for the container."
   required: false
   type: string
   default: "250m"
+  show_if: "architecture=replication"
   group: "MySQL Secondary"
 - variable: secondary.resources.limits.cpu
-  label: MySQL secondary CPU limit
+  label: CPU limit
   description: "How much CPU the container is allowed to use. Exceeded limit causes CPU throttling."
   required: false
   type: string
   default: "250m"
+  show_if: "architecture=replication"
   group: "MySQL Secondary"
 - variable: secondary.resources.requests.memory
-  label: MySQL secondary memory request
+  label: Memory request
   description: "How much memory will be reserved for the container."
   required: false
   type: string
   default: "1G"
+  show_if: "architecture=replication"
   group: "MySQL Secondary"
 - variable: secondary.resources.limits.memory
-  label: MySQL secondary memory limit
+  label: Memory limit
   description: "How much memory the container is allowed to use. Exceeded limit causes container restart."
   required: false
   type: string
   default: "1G"
+  show_if: "architecture=replication"
   group: "MySQL Secondary"
